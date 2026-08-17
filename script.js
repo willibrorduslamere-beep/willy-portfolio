@@ -262,7 +262,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Collect all animatable elements for scroll-based motion
   const motionElements = document.querySelectorAll(
-    '.tool-card, .ai-skill-card, .other-skill-card, .social-card, .map-container, .timeline-map, .creator-badge, .origin-text, .id-card-system'
+    '.social-card, .map-container, .timeline-map, .origin-text, .id-card-system'
   );
 
   let lastScrollY = 0;
