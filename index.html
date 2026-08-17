@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Willy Lamere – Portfolio. AI Creator, Mining Engineering Student, Video Editor, Photographer & Visual Designer from Kepulauan Tanimbar." />
+  <title>Willy Lamere | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>W</text></svg>" />
+</head>
+<body>
+
+<!-- Particle Background -->
+<canvas id="particle-canvas"></canvas>
+
+<!-- Cursor Glow -->
+<div class="cursor-glow"></div>
+
+<!-- ═══════════ NAVBAR ═══════════ -->
+<nav class="navbar" id="navbar">
+  <a href="#hero" class="nav-logo">W<span>.</span></a>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#origin">Origin</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Connect</a></li>
+  </ul>
+  <div class="nav-toggle" id="nav-toggle">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- ═══════════ HERO ═══════════ -->
+<section id="hero">
+  <!-- Floating geometric shapes -->
+  <div class="geo-shape geo-1" data-parallax-speed="0.03"></div>
+  <div class="geo-shape geo-2" data-parallax-speed="0.05"></div>
+  <div class="geo-shape geo-3" data-parallax-speed="0.04"></div>
+
+  <!-- Hanging ID Card -->
+  <div class="id-card-system" data-parallax-speed="0.05">
+    <div class="lanyard-pin">
+      <div class="lanyard-pin-dot"></div>
+    </div>
+    <canvas class="lanyard-string" id="lanyard-canvas" width="200" height="120"></canvas>
+    <div class="id-card" id="id-card">
+      <div class="id-card-clip">
+        <div class="id-card-clip-hole"></div>
+      </div>
+      <div class="id-card-header">
+        <span class="id-card-logo">⚡</span>
+        <span class="id-card-org">PORTFOLIO</span>
+      </div>
+      <div class="id-card-photo-frame">
+        <img src="willy-profile.jpg" alt="Willy Lamere" />
+      </div>
+      <div class="id-card-info">
+        <h3 class="id-card-name">WILLY LAMERE</h3>
+        <p class="id-card-title">Mining Engineering Student</p>
+        <p class="id-card-subtitle">ITATS Surabaya</p>
+      </div>
+      <div class="id-card-barcode">
+        <div class="barcode-lines">
+          <span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <p class="barcode-text">AI CREATOR · VISUAL ARTIST</p>
+      </div>
+      <div class="id-card-drag-hint">↕ Drag me</div>
+    </div>
+  </div>
+
+  <div class="hero-content" data-parallax-speed="0.06">
+    <p class="hero-greeting" data-parallax-speed="0.02">Welcome to my portfolio</p>
+    <h1 class="hero-name" data-parallax-speed="0.04">WILLY</h1>
+    <p class="hero-tagline">AI Creator · Mining Engineering Student · Visual Artist</p>
+    <a href="#origin" class="hero-origin">
+      <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+      Kepulauan Tanimbar, Maluku
+    </a>
+  </div>
+
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ═══════════ ORIGIN ═══════════ -->
+<section id="origin">
+  <div class="section-container">
+    <div class="origin-grid">
+      <div class="origin-text reveal-left">
+        <span class="section-label">01 — Origin</span>
+        <h2 class="section-title">Kepulauan<br /><span class="highlight">Tanimbar</span></h2>
+        <p>Saya berasal dari Kabupaten Kepulauan Tanimbar, sebuah kepulauan yang indah di provinsi Maluku, Indonesia. Wilayah yang kaya akan budaya dan keindahan alam ini telah membentuk karakter dan perspektif kreatif saya.</p>
+        <p>Dari kepulauan terpencil di timur Indonesia, saya memulai perjalanan menuju dunia teknologi dan seni digital.</p>
+      </div>
+      <div class="reveal-right">
+        <div class="map-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d505462.2782853955!2d131.1!3d-7.9!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2d2934a5ea51eb61%3A0x4024e13a45e5e804!2sKabupaten+Kepulauan+Tanimbar!5e0!3m2!1sid!2sid!4v1"
+            allowfullscreen loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+          <span class="map-label">📍 Kab. Kepulauan Tanimbar</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ EDUCATION ═══════════ -->
+<section id="education">
+  <div class="section-container">
+    <span class="section-label reveal">02 — Education</span>
+    <h2 class="section-title reveal">My Academic <span class="highlight">Journey</span></h2>
+
+    <div class="timeline">
+      <!-- SD -->
+      <div class="timeline-item">
+        <span class="timeline-period">Sekolah Dasar</span>
+        <h3 class="timeline-school">SD Negeri Inpres Sifnana</h3>
+        <p class="timeline-detail">Pendidikan dasar di Sifnana, Kepulauan Tanimbar — tempat pertama saya belajar dan mengenal dunia.</p>
+        <div class="timeline-map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50000!2d131.3!3d-7.85!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2d2934a5ea51eb61%3A0x4024e13a45e5e804!2sSifnana%2C+Tanimbar!5e0!3m2!1sid!2sid!4v1"
+            allowfullscreen loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+
+      <!-- SMP -->
+      <div class="timeline-item">
+        <span class="timeline-period">Sekolah Menengah Pertama</span>
+        <h3 class="timeline-school">SMP Negeri 1 Tanimbar Selatan</h3>
+        <p class="timeline-detail">Melanjutkan pendidikan menengah pertama di Tanimbar Selatan, mulai mengeksplorasi minat di bidang teknologi.</p>
+        <div class="timeline-map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50000!2d131.35!3d-7.92!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2d2934a5ea51eb61%3A0x4024e13a45e5e804!2sTanimbar+Selatan!5e0!3m2!1sid!2sid!4v1"
+            allowfullscreen loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+
+      <!-- SMA -->
+      <div class="timeline-item">
+        <span class="timeline-period">Sekolah Menengah Atas</span>
+        <h3 class="timeline-school">SMA Negeri 10 Tanimbar Selatan</h3>
+        <p class="timeline-detail">Menyelesaikan pendidikan menengah atas dan mulai serius mengembangkan skill di bidang kreatif dan digital.</p>
+        <div class="timeline-map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50000!2d131.35!3d-7.93!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2d2934a5ea51eb61%3A0x4024e13a45e5e804!2sTanimbar+Selatan!5e0!3m2!1sid!2sid!4v1"
+            allowfullscreen loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+
+      <!-- Kuliah -->
+      <div class="timeline-item">
+        <div class="current-badge">
+          <span class="pulse"></span>
+          Currently Studying
+        </div>
+        <span class="timeline-period">Perguruan Tinggi</span>
+        <h3 class="timeline-school">Institut Teknologi Adhi Tama Surabaya (ITATS)</h3>
+        <p class="timeline-detail">Menempuh pendidikan di jurusan Mining Engineering (Teknik Pertambangan), mempelajari ilmu pertambangan sambil terus mengembangkan keahlian di bidang AI dan kreatif digital.</p>
+        <div class="timeline-map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.6!2d112.72!3d-7.315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fb8955a0f469%3A0xd83e7bfa30c0b471!2sInstitut+Teknologi+Adhi+Tama+Surabaya!5e0!3m2!1sid!2sid!4v1"
+            allowfullscreen loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ SKILLS ═══════════ -->
+<section id="skills">
+  <div class="section-container">
+    <span class="section-label reveal">03 — Skills & Expertise</span>
+    <h2 class="section-title reveal">What I <span class="highlight">Master</span></h2>
+
+    <div class="skills-grid">
+
+      <!-- ── AI Tools ── -->
+      <div class="skill-category">
+        <h3 class="skill-category-title">AI Tools Mastery</h3>
+        <p class="skill-category-desc">Menguasai berbagai platform AI terkemuka untuk produktivitas dan kreativitas.</p>
+        <div class="tools-grid">
+          <!-- Claude -->
+          <div class="tool-card">
+            <div class="tool-icon">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="white" opacity="0.8">
+                <path d="M4.709 15.955l4.397-2.005a.637.637 0 00.331-.839l-2.32-5.088a.637.637 0 00-1.17.005L3.38 14.946c-.243.533.2 1.118.782 1.063l.547-.054zM12.205 2.328a.637.637 0 00-1.168 0L5.196 15.063a.637.637 0 00.584.893h11.441a.637.637 0 00.584-.893L12.205 2.328zm5.086 13.627l-2.32-5.088a.637.637 0 00-1.17.005l-2.567 6.918c-.243.533.2 1.118.782 1.063l.547-.054 4.397-2.005a.637.637 0 00.331-.839z"/>
+              </svg>
+            </div>
+            <div class="tool-info">
+              <div class="tool-name">Claude</div>
+              <div class="tool-type">Anthropic</div>
+            </div>
+          </div>
+
+          <!-- ChatGPT -->
+          <div class="tool-card">
+            <div class="tool-icon">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="white" opacity="0.8">
+                <path d="M22.282 9.821a5.985 5.985 0 00-.516-4.91 6.046 6.046 0 00-6.51-2.9A6.065 6.065 0 0011.053.492a6.028 6.028 0 00-5.769 4.218 5.99 5.99 0 00-3.998 2.9 6.046 6.046 0 00.744 7.097 5.98 5.98 0 00.51 4.911 6.051 6.051 0 006.515 2.9A5.985 5.985 0 0013.26 24a6.056 6.056 0 005.772-4.206 5.99 5.99 0 003.997-2.9 6.056 6.056 0 00-.747-7.073zM13.26 22.43a4.476 4.476 0 01-2.876-1.04l.141-.081 4.779-2.758a.795.795 0 00.392-.681v-6.737l2.02 1.168a.071.071 0 01.038.052v5.583a4.504 4.504 0 01-4.494 4.494zM3.6 18.304a4.47 4.47 0 01-.535-3.014l.142.085 4.783 2.759a.771.771 0 00.78 0l5.843-3.369v2.332a.08.08 0 01-.033.062L9.74 19.95a4.5 4.5 0 01-6.14-1.646zM2.34 7.896a4.485 4.485 0 012.366-1.973V11.6a.766.766 0 00.388.676l5.815 3.355-2.02 1.168a.076.076 0 01-.071 0l-4.83-2.786A4.504 4.504 0 012.34 7.872zm16.597 3.855l-5.833-3.387L15.119 7.2a.076.076 0 01.071 0l4.83 2.791a4.494 4.494 0 01-.676 8.105v-5.678a.79.79 0 00-.407-.667zm2.01-3.023l-.141-.085-4.774-2.782a.776.776 0 00-.785 0L9.409 9.23V6.897a.066.066 0 01.028-.061l4.83-2.787a4.5 4.5 0 016.68 4.66zM8.325 12.317l-2.02-1.164a.08.08 0 01-.038-.057V5.51a4.498 4.498 0 017.375-3.453l-.142.08L8.724 4.9a.785.785 0 00-.397.68zm1.097-2.365l2.602-1.5 2.607 1.5v2.999l-2.597 1.5-2.607-1.5z"/>
+              </svg>
+            </div>
+            <div class="tool-info">
+              <div class="tool-name">ChatGPT</div>
+              <div class="tool-type">OpenAI</div>
+            </div>
+          </div>
+
+          <!-- Google Gemini -->
+          <div class="tool-card">
+            <div class="tool-icon">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="white" opacity="0.8">
+                <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm0 3.6c2.34 0 4.44.96 5.96 2.5L15.4 8.66A5.98 5.98 0 0012 7.2a4.8 4.8 0 100 9.6 4.77 4.77 0 004.14-2.4H12v-3.6h8.16c.14.78.24 1.56.24 2.4A8.4 8.4 0 1112 3.6z"/>
+              </svg>
+            </div>
+            <div class="tool-info">
+              <div class="tool-name">Google Gemini</div>
+              <div class="tool-type">Google</div>
+            </div>
+          </div>
+
+          <!-- Flow AI -->
+          <div class="tool-card">
+            <div class="tool-icon">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="white" opacity="0.8">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+              </svg>
+            </div>
+            <div class="tool-info">
+              <div class="tool-name">Flow AI</div>
+              <div class="tool-type">AI Platform</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── AI Skills ── -->
+      <div class="skill-category">
+        <h3 class="skill-category-title">AI Creative Skills</h3>
+        <p class="skill-category-desc">Kemampuan menciptakan konten kreatif menggunakan kekuatan AI hanya dengan prompting.</p>
+        <div class="ai-skills-grid">
+          <div class="ai-skill-card">
+            <div class="ai-skill-icon">🎬</div>
+            <h4 class="ai-skill-title">AI Video Creation</h4>
+            <p class="ai-skill-desc">Membuat video berkualitas tinggi menggunakan AI generatif hanya dengan teknik prompting yang tepat.</p>
+          </div>
+          <div class="ai-skill-card">
+            <div class="ai-skill-icon">🎨</div>
+            <h4 class="ai-skill-title">AI Image Generation</h4>
+            <p class="ai-skill-desc">Menghasilkan gambar dan artwork profesional melalui berbagai platform AI dengan prompt engineering.</p>
+          </div>
+          <div class="ai-skill-card">
+            <div class="ai-skill-icon">📋</div>
+            <h4 class="ai-skill-title">AI Storyboarding</h4>
+            <p class="ai-skill-desc">Merancang storyboard lengkap untuk proyek kreatif menggunakan AI, dari konsep hingga visualisasi final.</p>
+          </div>
+        </div>
+
+        <!-- ImagineArt Creator -->
+        <div class="creator-badge">
+          <div class="creator-icon">✨</div>
+          <div class="creator-info">
+            <h4>ImagineArt</h4>
+            <p>Official Creator & Content Producer</p>
+            <span class="role">AI Creator</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Other Skills ── -->
+      <div class="skill-category">
+        <h3 class="skill-category-title">Creative & Technical Skills</h3>
+        <p class="skill-category-desc">Keahlian di bidang kreatif dan produksi konten visual.</p>
+        <div class="other-skills-grid">
+          <!-- Video Editing -->
+          <div class="other-skill-card">
+            <div class="other-skill-icon">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="white" opacity="0.7">
+                <path d="M18 4l2 4h-3l-2-4h-2l2 4h-3l-2-4H8l2 4H7L5 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4h-4z"/>
+              </svg>
+            </div>
+            <div class="other-skill-name">Video Editing</div>
+            <div class="other-skill-sub">Production</div>
+          </div>
+
+          <!-- Photography -->
+          <div class="other-skill-card">
+            <div class="other-skill-icon">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="white" opacity="0.7">
+                <circle cx="12" cy="12" r="3.2"/>
+                <path d="M9 2L7.17 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2h-3.17L15 2H9zm3 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"/>
+              </svg>
+            </div>
+            <div class="other-skill-name">Photography</div>
+            <div class="other-skill-sub">Visual Art</div>
+          </div>
+
+          <!-- Poster Design -->
+          <div class="other-skill-card">
+            <div class="other-skill-icon">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="white" opacity="0.7">
+                <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm-2-3h4v-2h-4v2zM5 9c0 3.92 2.51 7.24 6 8.48V19h2v-1.52c3.49-1.24 6-4.56 6-8.48 0-5.52-4.48-10-10-10S2 3.48 2 9h3zm5-5c3.31 0 6 2.69 6 6h-6V4z"/>
+              </svg>
+            </div>
+            <div class="other-skill-name">Desain Poster</div>
+            <div class="other-skill-sub">Graphic Design</div>
+          </div>
+
+          <!-- Visual Editing -->
+          <div class="other-skill-card">
+            <div class="other-skill-icon">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="white" opacity="0.7">
+                <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/>
+              </svg>
+            </div>
+            <div class="other-skill-name">Visual Editing</div>
+            <div class="other-skill-sub">Post-Production</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ CONTACT / SOCIAL ═══════════ -->
+<section id="contact">
+  <div class="section-container contact-content">
+    <span class="section-label reveal">04 — Connect</span>
+    <h2 class="section-title reveal">Let's <span class="highlight">Connect</span></h2>
+    <p class="reveal" style="color: var(--text-secondary); max-width: 500px; margin: 0 auto;">
+      Follow my creative journey and let's collaborate on something amazing.
+    </p>
+
+    <div class="social-cards">
+      <!-- Instagram -->
+      <a href="https://www.instagram.com/willylamere?igsh=MWJuemptYWRoejhzNA==" target="_blank" rel="noopener" class="social-card reveal delay-1">
+        <div class="social-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+          </svg>
+        </div>
+        <div class="social-card-info">
+          <div class="social-card-name">Instagram</div>
+          <div class="social-card-handle">@willylamere</div>
+        </div>
+        <div class="social-card-cta">
+          Visit Profile
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+      </a>
+
+      <!-- YouTube -->
+      <a href="https://youtube.com/@willyanimation-b6y?si=Xe2ri1nDNTR0VqvG" target="_blank" rel="noopener" class="social-card reveal delay-2">
+        <div class="social-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+          </svg>
+        </div>
+        <div class="social-card-info">
+          <div class="social-card-name">YouTube</div>
+          <div class="social-card-handle">@willyanimation</div>
+        </div>
+        <div class="social-card-cta">
+          Watch Videos
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer class="footer">
+  <p>© 2026 Willy Lamere — All Rights Reserved</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
