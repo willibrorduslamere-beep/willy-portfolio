@@ -50,11 +50,10 @@
     <div class="preloader-brand">
       <span>W</span><span class="preloader-dot">.</span>
     </div>
-    <div class="preloader-meta">
-      <span>INITIALIZING</span>
-      <span class="preloader-counter" id="preloader-counter">00%</span>
+    <div class="preloader-progress-track">
+      <div class="preloader-progress-bar" id="preloader-progress-bar"></div>
     </div>
-    <p class="preloader-skip">Tekan sembarang tombol untuk lewati</p>
+    <div class="preloader-counter" id="preloader-counter">0%</div>
   </aside>
 
   <!-- ═══════════ FLOATING NAVBAR ═══════════ -->
@@ -111,7 +110,7 @@
             </h1>
 
             <p class="hero-subheadline">
-              AI Creator · Mining Engineering Student · Visual & Motion Designer
+              AI Creator · Mining Engineering Student · Visual Artist
             </p>
 
             <div class="hero-origin-tag">
@@ -121,7 +120,7 @@
 
             <div class="hero-cta-group">
               <a href="#gallery" class="btn btn-primary">
-                <span>Lihat Karya Poster</span>
+                <span>Lihat Karya</span>
                 <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i>
               </a>
               <a href="#services" class="btn btn-secondary">
@@ -133,11 +132,11 @@
 
           <!-- Hero Visual Frame (Poster 6) -->
           <div class="hero-visual-wrap">
-            <div class="poster-frame tilt-element" data-tilt-max="8">
+            <div class="poster-frame tilt-element" data-tilt-max="8" data-poster-index="5" role="button" tabindex="0" aria-label="Buka Lightbox Poster 6 Willy Lamere">
               <span class="poster-badge">POSTER #06</span>
               <picture>
                 <source type="image/webp" srcset="assets/posters/poster-6-willy-600w.webp 600w, assets/posters/poster-6-willy-1080w.webp 1080w" sizes="(max-width: 768px) 90vw, 460px" />
-                <img src="assets/posters/poster-6-willy.jpg" alt="Poster Willy Lamere dengan tipografi raksasa latar olive" width="1080" height="1350" fetchpriority="high" />
+                <img src="poster-6-willy.jpg" onerror="this.onerror=null; this.src='assets/posters/poster-6-willy.jpg';" alt="Poster Willy Lamere dengan tipografi raksasa latar olive" width="1080" height="1350" fetchpriority="high" decoding="async" />
               </picture>
             </div>
 
@@ -164,36 +163,26 @@
           </div>
         </div>
       </div>
-
-      <!-- Scroll Indicator -->
-      <div class="hero-scroll-indicator" aria-hidden="true">
-        <div class="scroll-mouse">
-          <div class="scroll-wheel"></div>
-        </div>
-        <span>Scroll to explore</span>
-      </div>
     </section>
 
     <!-- ═══════════ 3. MARQUEE RIBBON ═══════════ -->
     <div class="marquee-ribbon" aria-hidden="true">
       <div class="marquee-track">
         <div class="marquee-item">
-          <span>AI VIDEO CREATION</span><span class="marquee-star">✦</span>
-          <span>AI IMAGE GENERATION</span><span class="marquee-star">✦</span>
-          <span>AI STORYBOARDING</span><span class="marquee-star">✦</span>
-          <span>VIDEO EDITING</span><span class="marquee-star">✦</span>
-          <span>PHOTOGRAPHY</span><span class="marquee-star">✦</span>
-          <span>POSTER DESIGN</span><span class="marquee-star">✦</span>
-          <span>IMAGINEART CREATOR</span><span class="marquee-star">✦</span>
+          <span class="marquee-word">AI VIDEO</span><span class="marquee-dot"></span>
+          <span class="marquee-word marquee-outline">AI IMAGE</span><span class="marquee-dot"></span>
+          <span class="marquee-word">STORYBOARD</span><span class="marquee-dot"></span>
+          <span class="marquee-word marquee-outline">VIDEO EDITING</span><span class="marquee-dot"></span>
+          <span class="marquee-word">PHOTOGRAPHY</span><span class="marquee-dot"></span>
+          <span class="marquee-word marquee-outline">POSTER DESIGN</span><span class="marquee-dot"></span>
         </div>
         <div class="marquee-item">
-          <span>AI VIDEO CREATION</span><span class="marquee-star">✦</span>
-          <span>AI IMAGE GENERATION</span><span class="marquee-star">✦</span>
-          <span>AI STORYBOARDING</span><span class="marquee-star">✦</span>
-          <span>VIDEO EDITING</span><span class="marquee-star">✦</span>
-          <span>PHOTOGRAPHY</span><span class="marquee-star">✦</span>
-          <span>POSTER DESIGN</span><span class="marquee-star">✦</span>
-          <span>IMAGINEART CREATOR</span><span class="marquee-star">✦</span>
+          <span class="marquee-word">AI VIDEO</span><span class="marquee-dot"></span>
+          <span class="marquee-word marquee-outline">AI IMAGE</span><span class="marquee-dot"></span>
+          <span class="marquee-word">STORYBOARD</span><span class="marquee-dot"></span>
+          <span class="marquee-word marquee-outline">VIDEO EDITING</span><span class="marquee-dot"></span>
+          <span class="marquee-word">PHOTOGRAPHY</span><span class="marquee-dot"></span>
+          <span class="marquee-word marquee-outline">POSTER DESIGN</span><span class="marquee-dot"></span>
         </div>
       </div>
     </div>
@@ -203,11 +192,11 @@
       <div class="container">
         <div class="about-grid">
           <!-- Poster 7 Frame -->
-          <div class="poster-frame tilt-element" data-tilt-max="7">
+          <div class="poster-frame tilt-element" data-tilt-max="7" data-poster-index="6" role="button" tabindex="0" aria-label="Buka Lightbox Poster 7 Hello Willy">
             <span class="poster-badge">POSTER #07</span>
             <picture>
               <source type="image/webp" srcset="assets/posters/poster-7-hello-600w.webp 600w, assets/posters/poster-7-hello-1080w.webp 1080w" sizes="(max-width: 768px) 90vw, 440px" />
-              <img src="assets/posters/poster-7-hello.jpg" alt="Poster Hello I am Willy dengan latar merah marun dan kacamata" width="1080" height="1350" loading="lazy" />
+              <img src="poster-7-hello.jpg" onerror="this.onerror=null; this.src='assets/posters/poster-7-hello.jpg';" alt="Poster Hello I am Willy dengan latar merah marun dan kacamata" width="1080" height="1350" loading="lazy" decoding="async" />
             </picture>
           </div>
 
@@ -405,11 +394,11 @@
         <div class="bento-grid">
           <!-- Poster 2 Visual -->
           <div class="bento-poster-cell">
-            <div class="poster-frame tilt-element" data-tilt-max="7">
+            <div class="poster-frame tilt-element" data-tilt-max="7" data-poster-index="1" role="button" tabindex="0" aria-label="Buka Lightbox Poster 2 Do Whatever">
               <span class="poster-badge">POSTER #02</span>
               <picture>
                 <source type="image/webp" srcset="assets/posters/poster-2-whatever-600w.webp 600w, assets/posters/poster-2-whatever-1080w.webp 1080w" sizes="(max-width: 1024px) 90vw, 480px" />
-                <img src="assets/posters/poster-2-whatever.jpg" alt="Poster Do Whatever dengan laptop melayang dan nuansa kuning kreatif" width="1080" height="1350" loading="lazy" />
+                <img src="poster-2-whatever.jpg" onerror="this.onerror=null; this.src='assets/posters/poster-2-whatever.jpg';" alt="Poster Do Whatever dengan laptop melayang dan nuansa kuning kreatif" width="1080" height="1350" loading="lazy" decoding="async" />
               </picture>
             </div>
           </div>
@@ -504,19 +493,19 @@
       <div class="container">
         <div class="canon-grid">
           <!-- Poster 1 Frame -->
-          <div class="poster-frame tilt-element" data-tilt-max="7">
+          <div class="poster-frame tilt-element" data-tilt-max="7" data-poster-index="0" role="button" tabindex="0" aria-label="Buka Lightbox Poster 1 Canon">
             <span class="poster-badge">POSTER #01 · CANON</span>
             <picture>
               <source type="image/webp" srcset="assets/posters/poster-1-canon-600w.webp 600w, assets/posters/poster-1-canon-1080w.webp 1080w" sizes="(max-width: 1024px) 90vw, 480px" />
-              <img src="assets/posters/poster-1-canon.jpg" alt="Poster Canon Capture Vision Iso Raw dengan kamera dan film strip dinamis" width="1080" height="1350" loading="lazy" />
+              <img src="poster-1-canon.jpg" onerror="this.onerror=null; this.src='assets/posters/poster-1-canon.jpg';" alt="Poster Canon Capture Vision Iso Raw dengan kamera dan film strip dinamis" width="1080" height="1350" loading="lazy" decoding="async" />
             </picture>
           </div>
 
           <!-- Canon Content -->
           <div>
-            <span class="section-label" style="color: var(--c-canon-red);">Capture Vision · Iso Raw</span>
+            <span class="section-label">Capture Vision · Iso Raw</span>
             <h2 class="section-title">
-              PHOTOGRAPHY & <span style="color: var(--c-canon-red);">VIDEO EDITING</span>
+              PHOTOGRAPHY & <span class="accent-text">VIDEO EDITING</span>
             </h2>
             <p class="section-desc">
               Menangkap emosi dan momen dalam ketajaman visual absolut. Pengalaman menyeluruh dari penentuan angle kamera, pencahayaan, hingga tahapan pascaproduksi audio-visual tingkat profesional.
@@ -543,11 +532,10 @@
 
             <!-- Tags & Spec Badges -->
             <div class="canon-meta-badges">
-              <span class="canon-tag">50.6 MP Detail</span>
-              <span class="canon-tag">Video Production</span>
-              <span class="canon-tag">Color Grading</span>
+              <span class="canon-tag">Video Editing</span>
+              <span class="canon-tag">Production</span>
+              <span class="canon-tag">Photography</span>
               <span class="canon-tag">Post-Production</span>
-              <span class="canon-tag">Camera Operator</span>
             </div>
           </div>
         </div>
@@ -559,19 +547,19 @@
       <div class="container">
         <div class="services-card-wrap">
           <!-- Poster 3 Frame -->
-          <div class="poster-frame tilt-element" data-tilt-max="7">
-            <span class="poster-badge" style="background: rgba(242, 101, 34, 0.85);">POSTER #03 · JASA TUGAS</span>
+          <div class="poster-frame tilt-element" data-tilt-max="7" data-poster-index="2" role="button" tabindex="0" aria-label="Buka Lightbox Poster 3 Order">
+            <span class="poster-badge">POSTER #03 · JASA TUGAS</span>
             <picture>
               <source type="image/webp" srcset="assets/posters/poster-3-order-600w.webp 600w, assets/posters/poster-3-order-1080w.webp 1080w" sizes="(max-width: 1024px) 90vw, 450px" />
-              <img src="assets/posters/poster-3-order.jpg" alt="Poster Order Sekarang jasa tugas Microsoft Word dan PowerPoint" width="1080" height="1350" loading="lazy" />
+              <img src="poster-3-order.jpg" onerror="this.onerror=null; this.src='assets/posters/poster-3-order.jpg';" alt="Poster Order Sekarang jasa tugas Microsoft Word dan PowerPoint" width="1080" height="1350" loading="lazy" decoding="async" />
             </picture>
           </div>
 
           <!-- Services Details -->
           <div>
-            <span class="section-label" style="color: var(--c-orange);">Layanan Tugas Cepat & Rapi</span>
+            <span class="section-label">Layanan Tugas Cepat & Rapi</span>
             <h2 class="section-title">
-              BUAT TUGAS HANYA <br /><span style="color: var(--c-orange);">SEKALI KLIK</span>
+              BUAT TUGAS HANYA <br /><span class="accent-text">SEKALI KLIK</span>
             </h2>
             <p class="section-desc">
               Kewalahan dengan deadline tugas kuliah atau sekolah? Saya menyediakan layanan profesional pengetikan, perapihan laporan Word, dan desain presentasi PowerPoint yang modern, rapi, dan siap presentasi.
@@ -593,9 +581,9 @@
             </ul>
 
             <a href="https://wa.me/6285133773727?text=Halo%20Willy,%20saya%20tertarik%20menggunakan%20jasa%20pembuatan%20tugas%20Word/PowerPoint.%20Bisa%20dibantu%20detailnya?"
-              target="_blank" rel="noopener" class="btn btn-accent" style="background: var(--c-orange); border-color: var(--c-orange);">
+              target="_blank" rel="noopener" class="btn btn-primary">
               <i data-lucide="message-circle" style="width: 18px; height: 18px;"></i>
-              <span>Order via WhatsApp Sekarang</span>
+              <span>Order via WhatsApp</span>
             </a>
           </div>
         </div>
@@ -607,12 +595,17 @@
       <div class="container">
         <div class="gallery-filter-bar">
           <div>
-            <span class="section-label" style="color: var(--c-tosca);">Exhibition & Style</span>
-            <h2 class="section-title">ORIGINAL <span style="color: var(--c-tosca);">POSTERS</span></h2>
+            <span class="section-label">Exhibition & Style</span>
+            <h2 class="section-title">ORIGINAL <span class="accent-text">POSTERS</span></h2>
           </div>
           <p class="section-desc" style="max-width: 480px;">
             Koleksi lengkap 7 poster orisinal rasio 4:5 yang didesain secara khusus. Klik poster mana saja untuk membuka tampilan Lightbox resolusi penuh.
           </p>
+        </div>
+
+        <div class="gallery-swipe-hint" aria-hidden="true">
+          <i data-lucide="chevrons-left-right" style="width: 16px; height: 16px;"></i>
+          <span>Geser horizontal untuk melihat poster lainnya</span>
         </div>
 
         <div class="gallery-grid">
@@ -622,7 +615,7 @@
               <span class="poster-badge">#01 CANON</span>
               <picture>
                 <source type="image/webp" srcset="assets/posters/poster-1-canon-600w.webp 600w, assets/posters/poster-1-canon-1080w.webp 1080w" sizes="(max-width: 768px) 100vw, 360px" />
-                <img src="assets/posters/poster-1-canon.jpg" alt="Poster 1 Canon Capture Vision" width="1080" height="1350" loading="lazy" />
+                <img src="poster-1-canon.jpg" onerror="this.onerror=null; this.src='assets/posters/poster-1-canon.jpg';" alt="Poster 1 Canon Capture Vision" width="1080" height="1350" loading="lazy" decoding="async" />
               </picture>
               <div class="poster-zoom-hint">
                 <i data-lucide="maximize-2" style="width: 18px; height: 18px;"></i>
@@ -641,7 +634,7 @@
               <span class="poster-badge">#02 DO WHATEVER</span>
               <picture>
                 <source type="image/webp" srcset="assets/posters/poster-2-whatever-600w.webp 600w, assets/posters/poster-2-whatever-1080w.webp 1080w" sizes="(max-width: 768px) 100vw, 360px" />
-                <img src="assets/posters/poster-2-whatever.jpg" alt="Poster 2 Do Whatever" width="1080" height="1350" loading="lazy" />
+                <img src="poster-2-whatever.jpg" onerror="this.onerror=null; this.src='assets/posters/poster-2-whatever.jpg';" alt="Poster 2 Do Whatever" width="1080" height="1350" loading="lazy" decoding="async" />
               </picture>
               <div class="poster-zoom-hint">
                 <i data-lucide="maximize-2" style="width: 18px; height: 18px;"></i>
@@ -660,7 +653,7 @@
               <span class="poster-badge">#03 ORDER SEKARANG</span>
               <picture>
                 <source type="image/webp" srcset="assets/posters/poster-3-order-600w.webp 600w, assets/posters/poster-3-order-1080w.webp 1080w" sizes="(max-width: 768px) 100vw, 360px" />
-                <img src="assets/posters/poster-3-order.jpg" alt="Poster 3 Order Sekarang Jasa Tugas" width="1080" height="1350" loading="lazy" />
+                <img src="poster-3-order.jpg" onerror="this.onerror=null; this.src='assets/posters/poster-3-order.jpg';" alt="Poster 3 Order Sekarang Jasa Tugas" width="1080" height="1350" loading="lazy" decoding="async" />
               </picture>
               <div class="poster-zoom-hint">
                 <i data-lucide="maximize-2" style="width: 18px; height: 18px;"></i>
@@ -679,7 +672,7 @@
               <span class="poster-badge">#04 KEEP YOUR STYLE</span>
               <picture>
                 <source type="image/webp" srcset="assets/posters/poster-4-style-600w.webp 600w, assets/posters/poster-4-style-1080w.webp 1080w" sizes="(max-width: 768px) 100vw, 360px" />
-                <img src="assets/posters/poster-4-style.jpg" alt="Poster 4 Keep Your Style Streetwear" width="1080" height="1350" loading="lazy" />
+                <img src="poster-4-style.jpg" onerror="this.onerror=null; this.src='assets/posters/poster-4-style.jpg';" alt="Poster 4 Keep Your Style Streetwear" width="1080" height="1350" loading="lazy" decoding="async" />
               </picture>
               <div class="poster-zoom-hint">
                 <i data-lucide="maximize-2" style="width: 18px; height: 18px;"></i>
@@ -698,7 +691,7 @@
               <span class="poster-badge">#05 ON YOUR VIBE</span>
               <picture>
                 <source type="image/webp" srcset="assets/posters/poster-5-vibe-600w.webp 600w, assets/posters/poster-5-vibe-1080w.webp 1080w" sizes="(max-width: 768px) 100vw, 360px" />
-                <img src="assets/posters/poster-5-vibe.jpg" alt="Poster 5 On Your Vibe" width="1080" height="1350" loading="lazy" />
+                <img src="poster-5-vibe.jpg" onerror="this.onerror=null; this.src='assets/posters/poster-5-vibe.jpg';" alt="Poster 5 On Your Vibe" width="1080" height="1350" loading="lazy" decoding="async" />
               </picture>
               <div class="poster-zoom-hint">
                 <i data-lucide="maximize-2" style="width: 18px; height: 18px;"></i>
@@ -717,7 +710,7 @@
               <span class="poster-badge">#06 IDENTITY</span>
               <picture>
                 <source type="image/webp" srcset="assets/posters/poster-6-willy-600w.webp 600w, assets/posters/poster-6-willy-1080w.webp 1080w" sizes="(max-width: 768px) 100vw, 360px" />
-                <img src="assets/posters/poster-6-willy.jpg" alt="Poster 6 Willy Lamere Identity" width="1080" height="1350" loading="lazy" />
+                <img src="poster-6-willy.jpg" onerror="this.onerror=null; this.src='assets/posters/poster-6-willy.jpg';" alt="Poster 6 Willy Lamere Identity" width="1080" height="1350" loading="lazy" decoding="async" />
               </picture>
               <div class="poster-zoom-hint">
                 <i data-lucide="maximize-2" style="width: 18px; height: 18px;"></i>
@@ -736,7 +729,7 @@
               <span class="poster-badge">#07 HELLO WILLY</span>
               <picture>
                 <source type="image/webp" srcset="assets/posters/poster-7-hello-600w.webp 600w, assets/posters/poster-7-hello-1080w.webp 1080w" sizes="(max-width: 768px) 100vw, 360px" />
-                <img src="assets/posters/poster-7-hello.jpg" alt="Poster 7 Hello Willy" width="1080" height="1350" loading="lazy" />
+                <img src="poster-7-hello.jpg" onerror="this.onerror=null; this.src='assets/posters/poster-7-hello.jpg';" alt="Poster 7 Hello Willy" width="1080" height="1350" loading="lazy" decoding="async" />
               </picture>
               <div class="poster-zoom-hint">
                 <i data-lucide="maximize-2" style="width: 18px; height: 18px;"></i>
@@ -757,7 +750,7 @@
       <div class="container">
         <div class="quote-grid">
           <div>
-            <span class="section-label" style="color: var(--c-lime);">Mindset & Philosophy</span>
+            <span class="section-label">Mindset & Philosophy</span>
             <blockquote class="editorial-quote">
               NEED TO BE BETTER AND BELIEVE IN MYSELF.
             </blockquote>
@@ -770,11 +763,11 @@
           </div>
 
           <!-- Poster 5 Frame -->
-          <div class="poster-frame tilt-element" data-tilt-max="7">
-            <span class="poster-badge" style="background: rgba(95, 175, 45, 0.85);">POSTER #05 · ON YOUR VIBE</span>
+          <div class="poster-frame tilt-element" data-tilt-max="7" data-poster-index="4" role="button" tabindex="0" aria-label="Buka Lightbox Poster 5 On Your Vibe">
+            <span class="poster-badge">POSTER #05 · ON YOUR VIBE</span>
             <picture>
               <source type="image/webp" srcset="assets/posters/poster-5-vibe-600w.webp 600w, assets/posters/poster-5-vibe-1080w.webp 1080w" sizes="(max-width: 1024px) 90vw, 450px" />
-              <img src="assets/posters/poster-5-vibe.jpg" alt="Poster On Your Vibe dengan warna hijau segar dan kacamata hijau" width="1080" height="1350" loading="lazy" />
+              <img src="poster-5-vibe.jpg" onerror="this.onerror=null; this.src='assets/posters/poster-5-vibe.jpg';" alt="Poster On Your Vibe dengan warna hijau segar dan kacamata hijau" width="1080" height="1350" loading="lazy" decoding="async" />
             </picture>
           </div>
         </div>
@@ -786,7 +779,7 @@
       <div class="container">
         <span class="section-label">Collaboration & Inquiries</span>
         <h2 class="connect-hero-title">
-          LET'S CREATE SOMETHING <br /><span class="accent-text">REMARKABLE.</span>
+          LET'S CREATE SOMETHING <br /><span class="accent-text">AMAZING.</span>
         </h2>
 
         <div class="social-cards-grid">

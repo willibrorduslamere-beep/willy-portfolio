@@ -32,12 +32,12 @@ document.addEventListener('DOMContentLoaded', () => {
     requestAnimationFrame(raf);
   }
 
-  // ── 3. PRELOADER CONTROLLER ──
+  // ── 3. PRELOADER CONTROLLER (Max 1.5s, Auto Dismiss, Clean Progress) ──
   const preloader = document.getElementById('preloader');
   const preloaderCounter = document.getElementById('preloader-counter');
+  const preloaderBar = document.getElementById('preloader-progress-bar');
 
   if (preloader) {
-    let progress = 0;
     let isDismissed = false;
 
     function dismissPreloader() {
@@ -46,48 +46,69 @@ document.addEventListener('DOMContentLoaded', () => {
       preloader.classList.add('fade-out');
       setTimeout(() => {
         preloader.style.display = 'none';
-      }, 700);
+      }, 500);
     }
 
     if (prefersReducedMotion) {
       dismissPreloader();
     } else {
-      const interval = setInterval(() => {
-        progress += Math.floor(Math.random() * 8) + 4;
-        if (progress >= 100) {
-          progress = 100;
-          clearInterval(interval);
-          if (preloaderCounter) preloaderCounter.textContent = '100%';
-          setTimeout(dismissPreloader, 350);
-        } else {
-          if (preloaderCounter) preloaderCounter.textContent = `${progress < 10 ? '0' : ''}${progress}%`;
-        }
-      }, 45);
+      const startTime = performance.now();
+      const totalDuration = 1100; // smooth 1.1s progress animation
 
-      preloader.addEventListener('click', dismissPreloader);
-      window.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' || e.key === ' ' || e.key === 'Enter') {
-          dismissPreloader();
+      function updateProgress(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(100, Math.round((elapsed / totalDuration) * 100));
+        
+        if (preloaderCounter) preloaderCounter.textContent = `${progress}%`;
+        if (preloaderBar) preloaderBar.style.width = `${progress}%`;
+
+        if (progress < 100) {
+          requestAnimationFrame(updateProgress);
+        } else {
+          setTimeout(dismissPreloader, 200);
         }
-      }, { once: true });
+      }
+
+      requestAnimationFrame(updateProgress);
+
+      // Hard safeguard: auto dismiss within 1.5s max
+      setTimeout(dismissPreloader, 1500);
     }
   }
 
-  // ── 4. CUSTOM CURSOR (DESKTOP ONLY) ──
+  // ── 4. CUSTOM CURSOR (DESKTOP FINE-POINTER ONLY) ──
   const cursor = document.getElementById('custom-cursor');
   const follower = document.getElementById('custom-cursor-follower');
 
-  if (cursor && follower && !window.matchMedia('(pointer: coarse)').matches) {
+  if (cursor && follower && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
     let mouseX = -100;
     let mouseY = -100;
     let followerX = -100;
     let followerY = -100;
+    let isVisible = false;
 
     window.addEventListener('mousemove', (e) => {
       mouseX = e.clientX;
       mouseY = e.clientY;
       cursor.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+      if (!isVisible) {
+        isVisible = true;
+        cursor.classList.add('visible');
+        follower.classList.add('visible');
+      }
     }, { passive: true });
+
+    document.addEventListener('mouseleave', () => {
+      isVisible = false;
+      cursor.classList.remove('visible');
+      follower.classList.remove('visible');
+    });
+
+    document.addEventListener('mouseenter', () => {
+      isVisible = true;
+      cursor.classList.add('visible');
+      follower.classList.add('visible');
+    });
 
     function renderCursorFollower() {
       followerX += (mouseX - followerX) * 0.18;
@@ -114,9 +135,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ── 5. THEME SWITCHER (DARK / LIGHT MODE) ──
+  // ── 5. THEME SWITCHER (DARK / LIGHT MODE - 60-30-10) ──
   const themeToggleBtn = document.getElementById('theme-toggle-btn');
-  const savedTheme = localStorage.getItem('willy-portfolio-theme') || 'light';
+  const savedTheme = localStorage.getItem('willy-portfolio-theme') || 'dark';
 
   function applyTheme(theme) {
     document.documentElement.setAttribute('data-theme', theme);
@@ -134,26 +155,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (themeToggleBtn) {
     themeToggleBtn.addEventListener('click', () => {
-      const current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      const current = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
       applyTheme(current);
     });
   }
 
-  // ── 6. DYNAMIC SECTION ACCENT SWITCHER ON SCROLL ──
-  const sections = document.querySelectorAll('section[data-theme-accent]');
+  // ── 6. DYNAMIC ACTIVE NAV HIGHLIGHT ON SCROLL ──
+  const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-link');
 
-  const themeObserver = new IntersectionObserver((entries) => {
+  const navObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        const accent = entry.target.getAttribute('data-theme-accent');
         const id = entry.target.getAttribute('id');
-        
-        if (accent) {
-          document.body.setAttribute('data-accent', accent);
-        }
-
-        // Highlight active navigation link
         navLinks.forEach(link => {
           if (link.getAttribute('href') === `#${id}`) {
             link.classList.add('active');
@@ -167,7 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
     threshold: 0.35
   });
 
-  sections.forEach(sec => themeObserver.observe(sec));
+  sections.forEach(sec => navObserver.observe(sec));
 
   // ── 7. NAVBAR SCROLL SHRINK EFFECT ──
   const navbar = document.getElementById('navbar');
@@ -304,44 +318,51 @@ document.addEventListener('DOMContentLoaded', () => {
   // ── 14. POSTER LIGHTBOX SYSTEM ──
   const posterData = [
     {
-      src: 'assets/posters/poster-1-canon.jpg',
+      src: 'poster-1-canon.jpg',
       webp: 'assets/posters/poster-1-canon-1080w.webp',
+      fallback: 'assets/posters/poster-1-canon.jpg',
       title: 'Poster #01 · Canon Capture Vision / Iso Raw',
       caption: 'Visual fotografis & film strip. Canon EOS 5Ds R, 50.6 MP detail.'
     },
     {
-      src: 'assets/posters/poster-2-whatever.jpg',
+      src: 'poster-2-whatever.jpg',
       webp: 'assets/posters/poster-2-whatever-1080w.webp',
+      fallback: 'assets/posters/poster-2-whatever.jpg',
       title: 'Poster #02 · Do Whatever',
       caption: 'Eksplorasi AI Creative, generative artwork & laptop melayang.'
     },
     {
-      src: 'assets/posters/poster-3-order.jpg',
+      src: 'poster-3-order.jpg',
       webp: 'assets/posters/poster-3-order-1080w.webp',
+      fallback: 'assets/posters/poster-3-order.jpg',
       title: 'Poster #03 · Order Sekarang',
       caption: 'Layanan pengerjaan tugas Word & PowerPoint kilat & rapi.'
     },
     {
-      src: 'assets/posters/poster-4-style.jpg',
+      src: 'poster-4-style.jpg',
       webp: 'assets/posters/poster-4-style-1080w.webp',
+      fallback: 'assets/posters/poster-4-style.jpg',
       title: 'Poster #04 · Keep Your Style',
       caption: 'Streetwear culture, boombox vintage, dan kolaborasi kreatif.'
     },
     {
-      src: 'assets/posters/poster-5-vibe.jpg',
+      src: 'poster-5-vibe.jpg',
       webp: 'assets/posters/poster-5-vibe-1080w.webp',
+      fallback: 'assets/posters/poster-5-vibe.jpg',
       title: 'Poster #05 · On Your Vibe',
       caption: '“Need to be better and believe in myself.” Creator mindset.'
     },
     {
-      src: 'assets/posters/poster-6-willy.jpg',
+      src: 'poster-6-willy.jpg',
       webp: 'assets/posters/poster-6-willy-1080w.webp',
+      fallback: 'assets/posters/poster-6-willy.jpg',
       title: 'Poster #06 · Willy Lamere Identity',
       caption: 'Tipografi raksasa latar olive. Profil & visi sang kreator.'
     },
     {
-      src: 'assets/posters/poster-7-hello.jpg',
+      src: 'poster-7-hello.jpg',
       webp: 'assets/posters/poster-7-hello-1080w.webp',
+      fallback: 'assets/posters/poster-7-hello.jpg',
       title: 'Poster #07 · Hello Willy',
       caption: 'Hello, I am Willy, I can do anything. Sudut pandang melalui kacamata.'
     }
@@ -360,6 +381,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const item = posterData[currentPosterIndex];
     if (!item) return;
 
+    lightboxImg.onerror = function() {
+      if (this.src.indexOf('.webp') !== -1) {
+        this.src = item.src;
+      } else if (this.src.indexOf('assets/posters') === -1) {
+        this.src = item.fallback;
+      }
+    };
+
     lightboxImg.src = item.webp || item.src;
     lightboxImg.alt = item.title;
     lightboxCaption.innerHTML = `<strong>${item.title}</strong><br />${item.caption} (${currentPosterIndex + 1} / ${posterData.length})`;
@@ -375,17 +404,17 @@ document.addEventListener('DOMContentLoaded', () => {
     if (lenis) lenis.start();
   }
 
-  document.querySelectorAll('.poster-card-item').forEach(card => {
+  document.querySelectorAll('[data-poster-index]').forEach(card => {
     card.addEventListener('click', () => {
-      const idx = parseInt(card.getAttribute('data-poster-index'), 10) || 0;
-      openLightbox(idx);
+      const idx = parseInt(card.getAttribute('data-poster-index'), 10);
+      if (!isNaN(idx)) openLightbox(idx);
     });
 
     card.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
-        const idx = parseInt(card.getAttribute('data-poster-index'), 10) || 0;
-        openLightbox(idx);
+        const idx = parseInt(card.getAttribute('data-poster-index'), 10);
+        if (!isNaN(idx)) openLightbox(idx);
       }
     });
   });
